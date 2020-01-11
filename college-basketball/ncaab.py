@@ -41,7 +41,7 @@ print(coeff_df)
 cof = []
 tcof = 0
 for i in range(0,8,2):
-    avgcof = (abs(coeff_df['Coefficient'][i])+abs(coeff_df['Coefficient'][i]))/2
+    avgcof = (abs(coeff_df['Coefficient'][i])+abs(coeff_df['Coefficient'][i+1]))/2
     cof.append(avgcof)
     tcof += avgcof
 print(cof/tcof)
