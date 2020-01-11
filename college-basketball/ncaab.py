@@ -37,6 +37,15 @@ print('R^2 score: ',reg.score(X_train,y_train))
 coeff_df = pd.DataFrame(reg.coef_, df_ff.columns, columns=['Coefficient'])
 print(coeff_df)
 
+# weight of the Coefficient
+cof = []
+tcof = 0
+for i in range(0,8,2):
+    avgcof = (abs(coeff_df['Coefficient'][i])+abs(coeff_df['Coefficient'][i]))/2
+    cof.append(avgcof)
+    tcof += avgcof
+print(cof/tcof)
+
 # predict from the test set
 y_pred = reg.predict(X_test)
 
